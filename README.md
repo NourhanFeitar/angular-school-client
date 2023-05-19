@@ -1,7 +1,11 @@
-# App1
+# Clientside School System
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
+## Description
+
+Clientside for the school system, shows all courses and allows users CRUD operations on all classes.
+Backend server has to be running alongside this project: [https://github.com/NourhanFeitar/dotnet-school-api]
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
