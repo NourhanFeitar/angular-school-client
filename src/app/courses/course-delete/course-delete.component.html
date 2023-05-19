@@ -1,0 +1,12 @@
+<div class="alert alert-danger">
+    <h1>Are You Sure You Want To Delete Course {{course?.name}}</h1>
+    <button (click)="Delete()">
+       YES
+    </button>
+    <button>
+        <a [routerLink]="['/courses']" >NO</a>
+    </button>
+    <button>
+        <a [routerLink]="['/courses']" >Back To Course List</a>
+    </button>
+</div>

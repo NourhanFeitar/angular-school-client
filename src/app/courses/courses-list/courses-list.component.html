@@ -1,0 +1,37 @@
+
+<div class="table-responsive">
+    
+    <app-course-add></app-course-add>
+    
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Course Id</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Credit Hours</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let item of courses">
+                <td scope="row">{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.creditHours}}</td>
+                <td>
+                    <button>
+                        <a [routerLink]="['/courses','details',item.id]"><Details></Details></a>
+                    </button>
+                    <button>
+                        <a [routerLink]="['/courses','update',item.id]" >Update</a>
+                    </button>
+
+                    <button style="background-color: red;">
+                        <a [routerLink]="['/courses','delete',item.id]">Delete</a>
+                    </button>
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+

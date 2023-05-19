@@ -1,0 +1,54 @@
+<!-- <div>
+    <h2 style="color: cadetblue ; text-decoration: underline;">Department Details</h2>
+</div>
+
+<p style="color: lightcoral;">Department Name : {{deptName}}</p>
+
+<input #name class="form-control" type="text"  >
+
+<p style="color: lightcoral;">ID :{{deptId}}</p>
+
+<input #id class="form-control" type="number" >
+
+<button style="background-color: cadetblue; color: white; font-weight: bolder;" (click)="checkFun(name.value,id.value)" >SAVE</button> -->
+
+<app-department-add (onDepartmentAdd)="addNewDepartment($event)"> Add A New Department</app-department-add>
+
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Department ID</th>
+                <th scope="col">Department Name</th>
+                <th scope="col">Department Location</th>
+                <th scope="col">Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let item of departments; let i=index">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.location}}</td>
+                <td>
+                    <button (click)="ShowDetails(item.id)">Details</button> 
+                    <button (click)="findDepartment(item.id)">Edit</button>
+                    <button style="background-color: red;" (click)="DeleteDeptId(item.id)">Delete</button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="deleteFlag">
+    <h3 class="alert alert-danger" >
+        Are You Sure You Want To Delete?
+        <button (click)="deleteDepartment()">Yes</button>
+        <button (click)="deleteFlag=false">No</button>
+    </h3>
+</div>
+<app-department-details [departmentDetails]="departmentDetail" *ngIf="detailsFlag" (onHide)="detailsFlag=$event" ></app-department-details>
+
+<app-department-edit *ngIf="editFlag" [departmentEdit]="eDepartmet" (onEditDepartment)="editDepartmentDetails($event)"></app-department-edit>
+
+

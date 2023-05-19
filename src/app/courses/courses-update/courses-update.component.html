@@ -1,0 +1,11 @@
+<div class="alert alert-success">
+    <h2>Update Course Info</h2>
+    <p> You Are Updating The Course With ID :{{chosenCourse.id}} </p>
+    <input value="" [(ngModel)]="chosenCourse.name">
+    <input value="" [(ngModel)]="chosenCourse.creditHours">
+    <button (click)="Update()">Save Course</button>
+    <button>
+        <a [routerLink]="['/courses']" >Back To List</a>
+    </button>
+    
+</div>

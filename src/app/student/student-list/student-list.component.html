@@ -1,0 +1,15 @@
+<div>
+    <h2 style="color: cadetblue ; text-decoration: underline;">Student Details</h2>
+</div> 
+
+<p style="color: lightcoral;">Name : {{stdName}}</p>
+
+<input #name class="form-control" type="text" >
+
+<p style="color: lightcoral;">ID :{{stdId}}</p>
+
+<input #id class="form-control" type="number" [value]="id">
+
+<button style="background-color: cadetblue; color: white; font-weight: bolder;" (click)="checkFun(name.value,id.value)" >SAVE</button>
+
+
